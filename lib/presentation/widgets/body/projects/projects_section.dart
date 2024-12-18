@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/presentation/widgets/body/certifications/components/title_text.dart';
 import 'package:portfolio/presentation/widgets/body/projects/projects_grid.dart';
 import 'package:portfolio/presentation/widgets/body/projects/projects_intro.dart';
 

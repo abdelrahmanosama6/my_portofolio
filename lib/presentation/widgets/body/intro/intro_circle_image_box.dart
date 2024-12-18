@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/presentation/widgets/body/intro/circle_image_border.dart';
 
 import '../../../../core/utils/app_extensions.dart';
 import '../../../../data/models/responsive_size.dart';
