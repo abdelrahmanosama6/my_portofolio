@@ -26,21 +26,19 @@ class ProjectItem extends StatelessWidget {
             Center(
               child: Padding(
                 padding: const EdgeInsets.all(12.0),
-                child: ClipOval(
-                  child: CachedNetworkImage(
-                   imageUrl: project.imageUrl,
-                    width: 80,
-                    height: 80,
-                    fit: BoxFit.cover, 
-                     placeholder: (context, url) => const CircularProgressIndicator(),
-                     errorWidget: (context, url, error) {
-          return Icon(
-            Icons.error,
-            color: AppColors.darkColor,
-            size: 50,
-          );
-        },
-                  ),
+                child: CachedNetworkImage(
+                 imageUrl: project.imageUrl,
+                  // width: 80,
+                  height: 200,
+                  fit: BoxFit.cover, 
+                   placeholder: (context, url) => const CircularProgressIndicator(),
+                   errorWidget: (context, url, error) {
+                          return Icon(
+                            Icons.error,
+                            color: AppColors.darkColor,
+                            size: 50,
+                          );
+                        },
                 ),
               ),
             ),

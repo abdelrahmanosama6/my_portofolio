@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/presentation/widgets/body/intro/intro_image.dart';
 import '../../../../core/utils/app_enums.dart';
 import '../../../../core/utils/app_extensions.dart';
 import 'intro_circle_image_box.dart';
@@ -26,7 +27,8 @@ class IntroSection extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 IntroText(),
-                IntroCircleImageBox(),
+                Center(child: IntroImage()),
+                // IntroCircleImageBox(),
               ],
             ),
     );

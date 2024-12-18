@@ -19,16 +19,13 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
 
   FutureOr<void> _changeAppBarHeadersIndex(
-    ChangeAppBarHeadersIndex event,
-    Emitter<HomeState> emit,
-  ) {
-     if (event.index == 3) {
-    emit(ShowCertificatesOnly());
-  } else {
-    _appBarHeaderIndex = event.index;
-    emit(AppBarHeadersIndexChanged(_appBarHeaderIndex));
-  }
-  }
+  ChangeAppBarHeadersIndex event,
+  Emitter<HomeState> emit,
+) {
+  // Update the app bar index and emit the corresponding state
+  _appBarHeaderIndex = event.index;
+  emit(AppBarHeadersIndexChanged(_appBarHeaderIndex));
+}
 
   FutureOr<void> _changeAppBarHeadersColorByColor(
     ChangeAppBarHeadersColorByColor event,

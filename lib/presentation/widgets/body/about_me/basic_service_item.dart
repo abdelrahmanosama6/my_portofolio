@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_enums.dart';
@@ -18,6 +18,7 @@ class BasicServiceItem extends StatefulWidget {
 
 class _BasicServiceItemState extends State<BasicServiceItem> {
   Color itemColor = AppColors.lowPriority;
+  bool isHovered = false;
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +35,7 @@ class _BasicServiceItemState extends State<BasicServiceItem> {
             SvgPicture.asset(
               widget.service.logo,
               height: 48,
+              color: isHovered ? Colors.white : null, // Only set color when hovered
             ),
             const SizedBox(height: 16),
             if (context.width > DeviceType.mobile.getMinWidth())
@@ -41,7 +43,6 @@ class _BasicServiceItemState extends State<BasicServiceItem> {
                 child: Text(
                   widget.service.service,
                   style: AppStyles.s24,
-                  // minFontSize: 8,
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -51,11 +52,17 @@ class _BasicServiceItemState extends State<BasicServiceItem> {
     );
   }
 
-  void _onExit(event) {
-    setState(() => itemColor = AppColors.lowPriority);
+  void _onExit(PointerEvent event) {
+    setState(() {
+      itemColor = AppColors.lowPriority;
+      isHovered = false;
+    });
   }
 
-  void _onEnter(event) {
-    setState(() => itemColor = AppColors.primaryColor);
+  void _onEnter(PointerEvent event) {
+    setState(() {
+      itemColor = AppColors.primaryColor;
+      isHovered = true;
+    });
   }
 }

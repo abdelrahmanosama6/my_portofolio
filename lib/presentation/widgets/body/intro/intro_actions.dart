@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:url_launcher/url_launcher.dart'; // Add this import
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart'; 
 
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_enums.dart';
 import '../../../../core/utils/app_extensions.dart';
 import '../../../../core/widgets/custom_button.dart';
-import '../../../blocs/home_bloc/home_bloc.dart';
 
 class IntoActions extends StatelessWidget {
   const IntoActions({super.key});
@@ -25,12 +24,10 @@ class IntoActions extends StatelessWidget {
           ? const SizedBox(height: 6)
           : const SizedBox(width: 32),
       CustomButton(
-        label: AppBarHeaders.projects.getString(),
-        icon: Icons.remove_red_eye,
+        label: 'Behance',
+        icon: FontAwesomeIcons.behance,
         borderColor: AppColors.primaryColor,
-        onPressed: () {
-          context.read<HomeBloc>().add(ChangeAppBarHeadersIndex(2));
-        },
+        onPressed: _gotoBehance,
         width: 160,
       ),
     ];

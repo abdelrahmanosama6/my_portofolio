@@ -10,7 +10,7 @@ abstract class AppStyles {
   );
   static TextStyle s32 = TextStyle(
     color: AppColors.primaryColor,
-    fontSize: 32,
+    fontSize: 40,
     fontWeight: FontWeight.w600,
   );
   static TextStyle s28 = TextStyle(

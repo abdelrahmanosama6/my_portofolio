@@ -23,6 +23,7 @@ class IntroCircleImageBox extends StatelessWidget {
         children: [
           // CircleImageBorder(),
           IntroImage(),
+          
         ],
       ),
     );

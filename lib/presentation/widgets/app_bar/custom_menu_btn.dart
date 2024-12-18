@@ -10,7 +10,6 @@ class CustomMenuBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<HomeBloc, HomeState>(
-      
       builder: (context, state) {
         return SizedBox(
           width: 40,
@@ -21,14 +20,7 @@ class CustomMenuBtn extends StatelessWidget {
               child: const Icon(Icons.menu),
             ),
             secondChild: TextButton(
-              onPressed: (){
-                context.read<HomeBloc>().add(
-    ChangeAppBarHeadersAxis(AppBarHeadersAxis.vertical),
-    
-  );
-  // Reset the certificate view when menu button is clicked
-  context.read<HomeBloc>().add(ChangeAppBarHeadersIndex(0)); 
-              },
+              onPressed: () => _closeBtnClicked(context),
               child: const Icon(Icons.close),
             ),
             duration: const Duration(milliseconds: 200),
@@ -41,19 +33,14 @@ class CustomMenuBtn extends StatelessWidget {
   _menuBtnClicked(BuildContext context) {
     context.read<HomeBloc>().add(
           ChangeAppBarHeadersAxis(AppBarHeadersAxis.vertical),
-          
         );
   }
 
-  void _closeBtnClicked(BuildContext context) {
-  // Change the axis to horizontal
-  context.read<HomeBloc>().add(
-        ChangeAppBarHeadersAxis(AppBarHeadersAxis.horizontal),
-      );
-
-  // Reset the app bar header index if necessary
-  context.read<HomeBloc>().add(ChangeAppBarHeadersIndex(0));
-}
+  _closeBtnClicked(BuildContext context) {
+    context.read<HomeBloc>().add(
+          ChangeAppBarHeadersAxis(AppBarHeadersAxis.horizontal),
+        );
+  }
 
   CrossFadeState _getCrossFadeState(BuildContext context) {
     final currentHeaderAxis = context.read<HomeBloc>().appBarHeaderAxis;
